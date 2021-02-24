@@ -35,12 +35,12 @@ $(LIBFT):
 	@$(MAKE) -C libft
 
 $(MLX):
-	@$(MAKE) -C minilibx-linux
+	@$(MAKE) -C minilibx
 
 clean:
 	@rm -rf $(OBJ_DIR)
 	@$(MAKE) -C libft clean
-	@$(MAKE) -C minilibx-linux clean
+	@$(MAKE) -C minilibx clean
 
 fclean: clean
 	@rm -f $(NAME)
