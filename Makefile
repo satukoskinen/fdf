@@ -25,8 +25,11 @@ all: $(NAME)
 $(NAME): $(OBJ) $(LIBFT) $(MLX)
 	$(CC) $(CFLAGS) -o $@ $(OBJ) $(INC) $(LIBS)
 
-$(OBJ_DIR)%.o: $(SRC_DIR)%.c $(HEADER)
+$(OBJ_DIR)%.o: $(SRC_DIR)%.c $(HEADER) $(OBJ_DIR)
 	$(CC) $(CFLAGS) -o $@ -c $< $(INC)
+
+$(OBJ_DIR):
+	mkdir $(OBJ_DIR)
 
 $(LIBFT):
 	@$(MAKE) -C libft
@@ -35,7 +38,7 @@ $(MLX):
 	@$(MAKE) -C minilibx-linux
 
 clean:
-	@rm -f $(OBJ)
+	@rm -rf $(OBJ_DIR)
 	@$(MAKE) -C libft clean
 	@$(MAKE) -C minilibx-linux clean
 
