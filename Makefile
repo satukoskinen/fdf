@@ -22,10 +22,10 @@ CFLAGS = -g -Wall -Wextra -Werror
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(LIBFT) $(MLX)
+$(NAME): $(OBJ_DIR) $(OBJ) $(LIBFT) $(MLX)
 	$(CC) $(CFLAGS) -o $@ $(OBJ) $(INC) $(LIBS)
 
-$(OBJ_DIR)%.o: $(SRC_DIR)%.c $(HEADER) $(OBJ_DIR)
+$(OBJ_DIR)%.o: $(SRC_DIR)%.c $(HEADER)
 	$(CC) $(CFLAGS) -o $@ -c $< $(INC)
 
 $(OBJ_DIR):
@@ -40,11 +40,11 @@ $(MLX):
 clean:
 	@rm -rf $(OBJ_DIR)
 	@$(MAKE) -C libft clean
-	@$(MAKE) -C minilibx clean
 
 fclean: clean
 	@rm -f $(NAME)
 	@$(MAKE) -C libft fclean
+	@$(MAKE) -C minilibx clean
 
 re: fclean all
 
