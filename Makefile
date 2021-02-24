@@ -13,9 +13,9 @@ LIBFT = libft.a
 
 MLX = mlx.a
 
-INC = -I include -I libft -I minilibx-linux
+INC = -I include -I libft -I minilibx
 
-LIBS = -lft -L libft -lmlx -L minilibx-linux -lXext -lX11 -L /opt/X11/lib
+LIBS = -lft -L libft -lmlx -L minilibx -lXext -lX11 -L /opt/X11/lib
 
 CC = gcc
 CFLAGS = -g -Wall -Wextra -Werror
