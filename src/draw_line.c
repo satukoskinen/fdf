@@ -6,7 +6,7 @@
 /*   By: skoskine <skoskine@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/22 11:28:51 by skoskine          #+#    #+#             */
-/*   Updated: 2021/02/24 11:03:36 by skoskine         ###   ########.fr       */
+/*   Updated: 2021/02/24 12:01:00 by skoskine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void		put_pixel_to_image(t_image *img, int x, int y, int colour)
 	char			*dst;
 	unsigned int	*colour_dst;
 
-	if (x >= 0 && x <= WIN_WIDTH && y >= 0 && y <= WIN_HEIGHT)
+	if (x > 0 && x < WIN_WIDTH && y > 0 && y < WIN_HEIGHT)
 	{
 		dst = img->addr + (y * img->line_length + x *
 		(img->bits_per_pixel / 8));
